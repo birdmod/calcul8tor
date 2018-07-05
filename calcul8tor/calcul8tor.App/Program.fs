@@ -14,7 +14,7 @@ let rec eatTokens (tkns: Token list) =
     | Val(a)::Plus::l -> a + eatTokens l
     | Val(a)::Minus::l -> a - eatTokens l
     | Val(a)::Mul::Val(b)::l -> eatTokens (Val(a*b)::l)
-    | Val(a)::Div::Val(b)::l -> eatTokens (Val(a*b)::l)
+    | Val(a)::Div::Val(b)::l -> eatTokens (Val(a/b)::l)
     | Val(a)::[] -> a
     | _ -> failwith "parse error"
 
